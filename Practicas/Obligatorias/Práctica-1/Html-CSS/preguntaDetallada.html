@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html lang = "es">
+   <head>
+      <title> 404 </title>
+      <meta charset="utf-8"/>
+	  <link rel="stylesheet" href="preguntaDetallada.css">
+   </head>
+
+   <body>
+       <div class="cabecera"> 
+            <div class="botones"> 
+                <button> <a href="#"> Preguntas   </a> </button>
+                <button> <a href="#"> Sin responder  </a> </button>
+                <button> <a href="#"> Usuario </a> </button>
+            </div>
+
+            <img src = "../Imagenes/logo_404.png" class="titulo">
+
+
+            <div class="usuario">
+                <img src = "../Imagenes/perfil.jpg" class ="perfil">
+                <h2> Usuario </h2>
+                <a href="#"> <button> Cerrar sesión </button> </a>
+            </div>
+            
+            <div class="formulario">
+                <form action="procesar_formulario" method="método">
+                    <input type="submit" value="Buscar">
+                    <input type="text" name="busqueda" placeholder="Buscar por título/cuerpo de pregunta">
+                </form>
+
+            </div>
+       </div>
+
+       <div class="cuerpo">
+           
+        
+        <div class="pregunta">
+            <h2>[Pregunta]</h2>
+            <p class="vista">Vista [n] veces</p>
+            <p class="votos"> [x] votos <img src="../Imagenes/like.png"> <img src="../Imagenes/dislike.png"> </p> 
+            <p> [Cuerpo de la pregunta]</p>
+            <label> Etiquetas de la pregunta </label>
+
+            <div class ="parteUsuario">
+                <p>Formulada el [fecha]</p>
+                <img src="../Imagenes/otroUsuario.jpg" class="fotoUsuario"> 
+                <p>Nombre usuario</p>
+            </div>
+
+        </div>
+
+       
+        <div class="respuestas">
+            <h2> [y] Respuestas</h2>
+            <p class="votos respuesta"> [z] votos <img src="../Imagenes/like.png"> <img src="../Imagenes/dislike.png"> </p>
+            <p class="respuesta"> [Respuesta] </p> 
+
+            <div class ="parteUsuario">
+                <p>Respondida el [fecha]</p>
+                <img src="../Imagenes/otroUsuario.jpg" class="fotoUsuario"> 
+                <p>Nombre usuario</p>
+            </div>
+
+        </div>
+        
+        <div class="tuRespuesta">
+            <h2> Tu respuesta </h2>
+            <textarea name="respuesta"> </textarea>
+            <button type ="submit"> Publica tu respuesta </button>
+
+        </div>
+           
+        </div>
+   </body>
+</html>

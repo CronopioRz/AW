@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html lang = "es">
+   <head>
+      <title> 404 </title>
+      <meta charset="utf-8"/>
+	  <link rel="stylesheet" href="perfilDeUsuario.css">
+   </head>
+
+   <body>
+       <div class="cabecera"> 
+            <div class="botones"> 
+                <button> <a href="#"> Preguntas   </a> </button>
+                <button> <a href="#"> Sin responder  </a> </button>
+                <button> <a href="#"> Usuario </a> </button>
+            </div>
+
+            <img src = "../Imagenes/logo_404.png" class="titulo">
+
+
+            <div class="usuario">
+                <img src = "../Imagenes/perfil.jpg" class ="perfil">
+                <h2> Usuario </h2>
+                <a href="#"> <button> Cerrar sesión </button> </a>
+            </div>
+            
+            <div class="formulario">
+                <form action="procesar_formulario" method="método">
+                    <input type="submit" value="Buscar">
+                    <input type="text" name="busqueda" placeholder="Buscar por título/cuerpo de pregunta">
+                </form>
+
+            </div>
+       </div>
+
+       <div class="cuerpo">
+           <div class="perfilUsuario"> <!--Imagen, nombre, miembro desde...-->
+                <img src="../Imagenes/otroUsuario.jpg" class="fotoUsuario"> 
+                <p> [Nombre usuario] </p>
+                <p> Miembro desde [fecha] </p>
+
+           </div>
+
+           <div class="estadisticas">
+               <p class="tipo"> ESTADÍSTICAS </p>
+                <div class="elementoEstadistica1">
+                    <p> Reputación </p>
+                    <p>[número reputación] </p>
+                </div>
+
+                <div class="elementoEstadistica2">
+                    <p> Preguntas </p>
+                    <p>[número preguntas] </p>
+                </div>
+                
+                <div class="elementoEstadistica2">
+                    <p> Respuestas </p>
+                    <p>[número respuestas] </p>
+                </div>
+
+           </div>
+
+           <div class="medallas">
+                <p class="tipo"> MEDALLAS </p> 
+
+                <div class="elementoMedalla"> <!--Bronce-->
+                    <div class ="bronce caracteristica"> 
+                        <p>BRONCE</p>
+                        <p>[Número bronce]</p>
+                    </div>
+                   
+                    <ul>
+                        <li class="colorBronce"> <span> Etiqueta1 </span> </li> 
+                        <li class="colorBronce"> <span> Etiqueta2 </span></li> 
+                    </ul>
+
+                </div>
+
+                <div class="elementoMedalla"> <!--Plata-->
+                    <div class ="plata caracteristica"> 
+                        <p>PLATA</p>
+                        <p>[Número plata]</p>
+                    </div>
+                    
+                    <ul>
+                        <li class="colorPlata"> <span> Etiqueta1 </span> </li> 
+                        <li class="colorPlata"> <span> Etiqueta2 </span></li> 
+                    </ul>
+                </div>
+
+                <div class="elementoMedalla"> <!--Oro-->
+                    <div class ="oro caracteristica"> 
+                        <p>ORO</p>
+                        <p>[Número oro]</p>
+                    </div>
+                   
+                </div> 
+           </div>
+           
+        </div>
+   </body>
+</html>

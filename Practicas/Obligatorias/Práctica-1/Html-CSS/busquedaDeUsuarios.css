@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap%27');
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+
+body {
+    background-image: url(../Imagenes/fondoPrincipal.jpg);
+}
+
+/*
+Contiene: botones, 404, usuario y formulario
+Organizado en un grid
+*/
+.cabecera { 
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    background-image: url(../Imagenes/cabecera.jpg);
+
+    position: fixed;
+    top: 0;
+    left:0;
+
+    width: 100%;
+    height: 25%;
+
+    justify-content: space-between;
+}
+
+.botones  {
+    grid-column: 1;
+    grid-row: 1/span 2;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo {
+    grid-column: 2;
+    grid-row: 2 /span -1;
+    margin-top: 10%;
+    width: 200px;
+    height: 90px;
+}
+
+.usuario {
+    grid-column: 3;
+    grid-row: 1/span 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 10%;
+    margin-right: 30px;
+}
+
+/*Botón cerrar sesión*/
+.usuario button{
+    width: 85px;
+    height: 25px;
+    font-size: 0.8em;
+}
+
+.formulario {
+    grid-column: 1/span 3;
+    grid-row:3;
+    margin-left: 4%; 
+}
+
+.perfil{
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    margin-left: 12px;
+}
+
+
+
+button, input[type="submit"] {
+    background-color: lightsteelblue;
+    color: whitesmoke;
+    border-radius: 8px;
+    font-family: 'Karla', sans-serif;
+}
+
+.botones button {
+    width: 160px;
+    height: 25px;
+    text-align: center;
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 15%;
+}
+
+/*Para que ocupe más espacio de la tercera fila*/
+.formulario input[type="text"] {
+    width: 90%;
+}
+
+
+/*Botón "Buscar"*/
+input[type="submit"]{
+    width: 80px;
+    height: 25px;
+}
+
+input[type="text"]::before {
+    content: url(../Imagenes/lupa.jpg);
+}
+
+button:hover, input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+/*CUERPO*/
+.cuerpo{
+    width: 50%;
+    margin: 200px 160px 160px 160px;
+    padding-left: 190px;
+}
+
+h2 {
+    text-align: center;
+    
+}
+
+.filtrado{
+    margin-top: 50px;
+    margin-right: 100px;
+}
+
+.usuarios{
+    display: grid;
+    grid-auto-rows: auto; /*El número de filas es variable(según el número de usuarios)*/
+    grid-template-columns: auto auto auto auto auto auto;
+
+    justify-content: center;
+
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+.elementoUsuario{ /*No hace falta poner fila y columna (se coloca solo)*/
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.fotoUsuario{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+label {
+    border:1px solid black;
+    background-color: rgb(45, 192, 197);
+    color: black;
+    border-radius: 5px;
+}

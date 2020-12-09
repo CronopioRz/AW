@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang = "es">
+   <head>
+      <title> 404 </title>
+      <meta charset="utf-8"/>
+	  <link rel="stylesheet" href="formularPregunta.css">
+   </head>
+
+   <body>
+       <div class="cabecera"> 
+            <div class="botones"> 
+                <button> <a href="#"> Preguntas   </a> </button>
+                <button> <a href="#"> Sin responder  </a> </button>
+                <button> <a href="#"> Usuario </a> </button>
+            </div>
+
+            <img src = "../Imagenes/logo_404.png" class="titulo">
+
+            <div class="usuario">
+                <img src = "../Imagenes/perfil.jpg" class ="perfil">
+                <h2> Usuario </h2>
+                <a href="#"> <button> Cerrar sesión </button> </a>
+
+            </div>
+            
+            <div class="formulario">
+                <form action="procesar_formulario" method="método">
+                    <input type="submit" value="Buscar">
+                    <input type="text" name="busqueda" placeholder="Buscar por título/cuerpo de pregunta">
+                </form>
+            </div>
+       </div>
+
+       <div class="cuerpo">
+           <h1> Formular una pregunta </h1>
+
+            <form action="procesar_formulario" method="método">
+                <h3>Título</h3>
+                <p> Sé específico e imagina que estás haciendo la pregunta a otra persona</p>
+                <input type="text" name="titulo" placeholder="¿Cuál es tu pregunta sobre programación de aplicaciones web?" required>
+               
+                <h3>Cuerpo</h3>
+                <p> Incluye toda la información que alguien necesita para responder tu pregunta </p>
+                <textarea name="cuerpo" required> </textarea>
+
+                <h3> Etiquetas </h3>
+                <p> Añade hasta 5 etiquetas para describir sobre qué trata tu pregunta </p>
+                <input type="text" name="etiquetas" placeholder="Por ejemplo: @node@express">
+                <input type="submit" value="Publica tu pregunta">
+
+            </form>
+        </div>
+   </body>
+</html>

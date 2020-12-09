@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap%27');
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+
+body {
+    background-image: url(../Imagenes/fondoPrincipal.jpg);
+    font-family: 'Karla', sans-serif;
+}
+
+/*
+Contiene: botones, 404, usuario y formulario
+Organizado en un grid
+*/
+.cabecera { 
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    background-image: url(../Imagenes/cabecera.jpg);
+
+    position: fixed;
+    top: 0;
+    left:0;
+
+    width: 100%;
+    height: 25%;
+
+    justify-content: space-between;
+}
+
+.botones  {
+    grid-column: 1;
+    grid-row: 1/span 2;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo {
+    grid-column: 2;
+    grid-row: 2 /span -1;
+    margin-top: 10%;
+    width: 200px;
+    height: 90px;
+}
+
+.usuario {
+    grid-column: 3;
+    grid-row: 1/span 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 10%;
+    margin-right: 30px;
+}
+
+/*Botón cerrar sesión*/
+.usuario button{
+    width: 85px;
+    height: 25px;
+    font-size: 0.8em;
+}
+
+.formulario {
+    grid-column: 1/span 3;
+    grid-row:3;
+    margin-left: 4%; 
+}
+
+.perfil{
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    margin-left: 12px;
+}
+
+button, input[type="submit"] {
+    background-color: lightsteelblue;
+    color: whitesmoke;
+    border-radius: 8px;
+    font-family: 'Karla', sans-serif;
+}
+
+.botones button {
+    width: 160px;
+    height: 25px;
+    text-align: center;
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 15%;
+}
+
+/*Para que ocupe más espacio de la tercera fila*/
+input[type="text"] {
+    width: 90%;
+}
+
+/*Botón "Buscar"*/
+.cabecera input[type="submit"]{
+    width: 80px;
+    height: 25px;
+}
+
+input[type="text"]::before {
+    content: url(../Imagenes/lupa.jpg);
+}
+
+button:hover, input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+
+
+
+/*CUERPO*/
+
+/*
+Primera fila --> perfilUsuario, estadisticas (cada una en una columna)
+Segunda fila --> Medallas (ocupa las dos columnas)
+*/
+.cuerpo{
+    width: 50%;
+    margin: 200px;
+    padding-left: 150px;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+
+    justify-content: space-between;
+
+}
+
+.perfilUsuario{ /*Contiene: Imagen, nombre, miembro desde...*/
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    grid-row: 1;
+    grid-column: 1;
+
+    background-color: rgb(181, 221, 233);
+    border: 1px solid black;
+    border-radius: 10px;
+
+    text-align:center;
+    padding: 40px;
+}
+
+.estadisticas {
+    grid-row: 1;
+    grid-column: 2;
+    display:grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+
+    justify-content: space-between;
+}
+
+.tipo{ /*Palabra ESTADÍSTICAS y MEDALLAS*/
+    grid-row: 1;
+    grid-column: 1/span 3;
+    text-align:center;
+
+    background-color: rgb(181, 221, 233);
+    border: 1px solid black;
+    border-radius: 10px;
+
+    margin-top:30px;
+}
+
+.elementoEstadistica1 {/*Reputación*/
+    grid-row: 2;
+    grid-column: 1/span 3;
+    text-align:center;
+}
+
+.elementoEstadistica2 {/*Preguntas y respuestas*/
+    grid-row: 3;
+    text-align:center;
+}
+
+
+.medallas{
+    grid-row: 2;
+    grid-column: 1/span 2;
+
+    display:grid; 
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto auto;
+
+    justify-content: space-between;
+}
+
+
+.elementoMedalla {
+    grid-row: 2;
+    display:flex;
+
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.fotoUsuario{
+    border-radius: 100%;
+    width: 50px;
+    height: 50px; 
+    margin-left: 55px;
+}
+
+.bronce {
+    background-color: burlywood;
+}
+
+.plata {
+    background-color: lightgray;
+}
+
+.oro {
+    background-color: gold;
+}
+
+.caracteristica {/*Para los elementos Bronce, Plata y Oro, que comparten tamaño, ...*/
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 20px 5px 20px;
+}
+
+ul {
+    margin-top: 20px;
+    list-style-position: inside; /*Para que se incluya el punto de la lista en el color de fondo*/
+    list-style-type: square;
+}
+
+li { /*Elemento de una lista*/
+    border: 1px solid black;
+    background-color: gray;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    margin-top: 5px;
+    
+}
+
+li span{ /*Para que el texto de la lista sea de color blanco*/
+    color:white;
+}
+
+/*Colores de los puntos de las listas*/
+.colorBronce {
+    color: burlywood;
+}
+
+.colorPlata {
+    color: lightgray;
+}
+
+.colorOro{
+    color:gold;
+}
+
+

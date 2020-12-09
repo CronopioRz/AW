@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html lang = "es">
+   <head>
+      <title> 404 </title>
+      <meta charset="utf-8"/>
+	  <link rel="stylesheet" href="preguntasFiltradas.css">
+   </head>
+
+   <body>
+       <div class="cabecera"> 
+            <div class="botones"> 
+                <button> <a href="#"> Preguntas   </a> </button>
+                <button> <a href="#"> Sin responder  </a> </button>
+                <button> <a href="#"> Usuario </a> </button>
+            </div>
+
+            <img src = "../Imagenes/logo_404.png" class="titulo">
+
+
+            <div class="usuario">
+                <img src = "../Imagenes/perfil.jpg" class ="perfil">
+                <h2> Usuario </h2>
+                <a href="#"> <button> Cerrar sesión </button> </a>
+
+            </div>
+            
+            <div class="formulario">
+                <form action="procesar_formulario" method="método">
+                    <input type="submit" value="Buscar">
+                    <input type="text" name="busqueda" placeholder="Buscar por título/cuerpo de pregunta">
+                </form>
+
+            </div>
+       </div>
+
+       <div class="cuerpo">
+           <h2> Preguntas con la etiqueta [nombre de la etiqueta] </h2>
+
+           <div class="inicial">
+               <p> [Número de preguntas] </p>
+               <button> <a href=#> Formular una pregunta </a> </button>
+           </div>
+
+           <div class= "mostrarPreguntas"> <!-- Aquí va cada pregunta -->
+               
+               <!--
+                Cada pregunta tiene: la parte pregunta (título, cuerpo y etiquetas) 
+                y la parte usuario (foto de perfil, nombre...)
+               -->
+               <div class="preguntas"> 
+                   <div class="partePregunta"> 
+                    <h3> Título de la pregunta </h3>
+                    <p> Cuerpo de la pregunta (sólo se muestran 150 caracteres max)</p>
+                    <label> Etiquetas de la pregunta </label>
+                   </div>
+
+                   <div class ="parteUsuario">
+                        <p>Formulada el [fecha]</p>
+                        <img src="../Imagenes/otroUsuario.jpg" class="fotoUsuario"> 
+                        <p>Nombre usuario</p>
+                   </div>
+                
+               </div>
+                
+           </div>
+           
+        </div>
+   </body>
+</html>

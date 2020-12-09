@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital@1&display=swap%27');
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background-image: url(../Imagenes/Web-Background.jpg);
+    font-family: 'Karla', sans-serif;
+}
+
+.cabecera {
+    background-color: gray;
+    position:fixed;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 25%;
+}
+
+h1 {
+    margin-top: 4%;
+    text-align: center;
+    font-size: xxx-large;
+    color:white;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+
+.cuerpo{
+    position: fixed;
+    top: 0%;
+    left: 40px;
+    margin: 200px 300px 300px 300px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    color: white;
+   
+}
+
+input[type=text], input[type=password]{
+    width: 100%;
+    margin: 8px 90px 8px 5px;
+    box-sizing: border-box;  
+    
+}
+
+input[type=file]{
+    padding-right: 20px;
+    box-sizing: border-box;  
+    border: 1px solid gray;
+}
+
+input[type=submit] { 
+    margin-left:28%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+    padding: 3% 8% 3% 10%;
+
+    background-color: gray;
+    border-radius: 10%;
+    color: whitesmoke;
+}
+
+button {
+    background-color:gray;
+    border-radius: 10%;
+    /*padding-right: 30%;
+    padding-left: 30%;*/
+    padding: 9px 25px 9px 25px;
+    margin-left: 10px; 
+    color: whitesmoke;
+}
+
+p {
+    margin-left:5px;
+    margin-top: 10px;
+}
+
+.crearCuenta{
+    margin-left:1.5%;
+}

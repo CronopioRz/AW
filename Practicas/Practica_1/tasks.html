@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html lang = "es">
+   <head>
+      <title> Gestor de tareas </title>
+      <meta charset="utf-8"/>
+      <link rel="stylesheet" href="tasksScreen.css" media="screen"/>
+      <link rel="stylesheet"  href="tasksPrint.css"  media="print"/> 
+      <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> <!--Favicon-->
+   </head>
+
+   <body>
+    <div class="barraSuperior">
+        <div class ="elementoTarea"> Tareas </div>
+       
+        <div class = "elementoUsuario"> 
+            <img src = "unnamed.jpg" class ="perfil">
+            <p class="correo"> usuario1@ucm.es </p>
+            <p class="desconectar"> <a href=#>DESCONECTAR </a> </p>
+        </div> 
+    </div> 
+    
+    <div class="notas"> <!--Contiene las tareas (finalizadas o no), el formulario y "Eliminar tareas completadas"-->
+        <ul> 
+        <div class="tarea"> <!--Cada tarea contiene la tarea con sus tags y "Marcar finalizada"-->
+            <li><p> Preparar práctica AW </p>  </li> 
+            
+            <label class= "tag"> <span> ( </span> AW  <span> ) </span></label>
+            <label class= "tag"> <span> ( </span> Práctica <span> ) </span> </label>
+            <a href=# class="marca"> Marcar finalizada </a>
+        </div>
+
+        <div class="tarea terminada"> 
+           <li> <p>  Mirar fechas congreso </p>  </li> 
+        </div>
+
+        <div class="tarea"> 
+           <li> <p>  Ir al supermercado </p>  </li> 
+            <label class= "tag"> <span> ( </span> Personal <span> ) </span> </label>
+            <a href=# class="marca"> Marcar finalizada </a>
+        </div>
+
+        <div class="tarea"> 
+            <li> <p> Mudanza </p>  </li> 
+            <label class= "tag"> <span> ( </span> Personal <span> ) </span> </label>
+            <a href=# class="marca"> Marcar finalizada </a>
+        </div>
+        </ul>
+
+        <div class= "formulario">
+            <form action="procesar_formulario" method="post">
+                <input type="text" name="tarea"> <!--Para introducir el texto-->
+                <input type="submit" value="Añadir"> <!--Botón de añadir tarea-->
+            </form>
+        </div>
+
+        <div class="eliminar">
+            <a href=#> Eliminar tareas completadas </a>
+        </div>
+    </div>
+    
+    
+   </body>
+</html>

@@ -1,0 +1,45 @@
+.rojo {
+    color:red;
+}
+.amarillo {
+    background: yellow;  
+}
+.violeta {
+    background: violet;
+}
+.verde {
+    background: green;
+}
+.resaltado {
+    background:lightgray;
+}
+.blanco {
+    background: white;
+}
+.png {
+    background:black;
+}
+.eleccion {
+    background: black;
+    color:white
+}
+body {
+    text-align: center;
+}
+#break {
+    background: purple;
+}
+#desayuno{
+    background: peru;
+}
+#comida {
+  background: seagreen;
+}
+#titulo {
+    background: red;
+    color:grey;
+    padding: 10px;
+}
+#tc {  
+    font-style: italic;
+}

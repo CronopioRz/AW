@@ -1,0 +1,193 @@
+/*Importamos el estilo de fuente general y el de la palabra "Tareas"*/
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background-image:url(libreria.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    font-family: 'Itim', cursive;
+}
+
+.barraSuperior{ /*Contiene la palabra "Tarea" y los datos del usuario*/
+    background-image: url(recortada.jpg);
+    background-size: cover;
+
+    position:fixed;
+    left: 0%;
+    top: 0%;
+
+    height: 25%;
+    width: 100%;
+}
+
+.perfil { /*Imagen de perfil*/
+    width: 50px; 
+    height: 50px;
+    grid-column: 1;
+    grid-row: 1/span 2;
+    border-radius: 40%;
+}
+
+.correo{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.desconectar{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+
+li{ /*Los puntos de las listas se muestran sólo en el modo impresión*/
+    list-style: none;
+}
+
+span { /*Los paréntesis sólo se muestran en el modo impresión*/
+    visibility: hidden; 
+}
+
+.elementoTarea{ /*Palabra "Tarea" */
+    position: fixed;
+    left:8%;
+    top: 8%;
+
+    font-family: 'Henny Penny', cursive;
+    color: black;
+    font-size: xxx-large; 
+}
+
+form {
+    margin: 5px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+input[type=text]{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 90px 8px 5px;
+    box-sizing: border-box;  
+}
+
+input[type=submit]{ /*Botón "Añadir"*/
+    height: 70%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    align-self: center;
+
+    font-family: 'Itim', cursive; 
+    border-radius: 10%;
+}
+
+.elementoUsuario{ /*Contiene: foto de perfil, correo, "DESCONECTAR" */
+    position: fixed;
+    left:75%;
+    top: 6%;
+
+    display:grid;
+    align-items: center;
+
+    width: fit-content;
+
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+    resize: both;
+}
+
+.formulario{
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(209, 223, 85);
+}
+
+.notas{
+    width: 50%;
+    padding: 290px;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.tarea{
+    background-color: rgb(241, 176, 138);
+    margin: 10px;
+    padding: 8px;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-radius: 10px;
+}
+
+p {
+    margin: 5px 5px 5px 20px;
+}
+
+.terminada{
+    background-color: rgb(168, 236, 170);
+    text-decoration: line-through; /*Para que la tarea se tache*/
+}
+
+
+/*Tarea ya finalizada*/
+.terminada p{
+    margin-left: 40px;
+}
+
+/*Marcar finalizada*/
+.marca {
+    margin: 5px 5px 5px auto; /*superior, derecho, inferior, izquierdo*/
+    background-color: white;
+    border-radius: 10%;
+    border: 1px solid green;
+    color: rgb(70, 68, 68);
+}
+
+/*Etiquetas*/
+.tag{
+    background-color: rgb(105, 71, 71);
+    margin: 4px;
+    border: 1px solid black;
+    border-radius: 10%;
+    color: white;
+}
+
+.eliminar{ /*Eliminar tarea*/
+    margin:15px;
+    text-align: center;
+}
+
+/*ENLACES*/
+a{ 
+    text-decoration:none; /*Quita el subrayado del enlace*/
+}
+
+a:hover{ /*Al pasar por encima de los enlaces cambia el tipo del cursor*/
+    cursor:pointer;
+}
+
+div.eliminar a{
+    background-color: rgb(168, 236, 170);
+    border:  2px solid #0b640b;
+    color: rgb(5, 5, 5);
+    padding: 7px;
+    border-radius: 10px;
+}
+
+div.eliminar a:hover{ /*Al pasar por encima de "Eliminar tarea" cambia el color de fondo*/
+    background-color: rgb(255, 255, 255);
+    border:  2px solid #92a843;
+}
+
+

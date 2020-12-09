@@ -1,0 +1,59 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    background-color: #f4f4f4;
+}
+div {
+    background-color: white;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top:25px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.enlace {
+    color: #1177D1;
+    text-decoration: none;
+}
+
+.temario p {
+    margin-left: 15px;
+}
+
+.menu p {
+    margin-left:5px;
+}
+
+.menu a {
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.h2 {
+    margin-left: 10px;
+}
+
+a[href$=".pdf"]::before {
+    content: url(pdf.png);
+    margin-right: 5px;
+}
+
+a[href$="https://cv4.ucm.es"]::before {
+    content: url(url.png);
+    margin-right: 5px;
+}
+
+a[href$="https://docs.google.com"]::before {
+    content: url(tarea.png);
+    margin-right: 5px;
+}
+
+a[href$="avisos.cv"]::before {
+    content :url(avisos.png);
+    margin-right: 5px;
+}
+
+
