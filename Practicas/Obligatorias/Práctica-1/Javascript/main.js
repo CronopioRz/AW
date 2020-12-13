@@ -3,8 +3,7 @@
 const mysql = require("mysql");
 const config = require("./config");
 const DAOUsuario = require("./DAOUsuario");
-const DAOPregunta = require("./DAOPregunta");
-const DAORespuesta = require("./DAORespuesta");
+const DAOPyr = require("./DAOPyr");
 const DAOTag = require("./DAOTag");
 const { getMaxListeners, exit } = require("process");
 
@@ -18,7 +17,7 @@ const pool = mysql.createPool({
 });
 
 let daoUsuario = new DAOUsuario(pool);
-let daoPregunta = new DAOPregunta(pool);
+let daoPyr = new DAOPyr(pool);
 
 function cb_getAllQuestions(err, result) {
     if(err){
@@ -63,6 +62,18 @@ function cb_searchQuestionByTag(err,result) {
     }
 }
 
+function cb_getAllAnswersByQuestion(err,result) {
+    if(err){
+        console.log(err.message);
+    }
+    else if (!result){
+        console.log("No hay respuestas en esta pregunta");
+    }
+    else {
+        console.log(result);
+    }
+}
 
-daoPregunta.searchQuestionByTag("css",cb_searchQuestionByTag);
+
+daoRespuesta.getAllAnswersByQuestion(1,cb_getAllAnswersByQuestion);
 

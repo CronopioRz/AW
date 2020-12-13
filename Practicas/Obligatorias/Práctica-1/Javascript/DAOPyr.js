@@ -1,4 +1,4 @@
-class DAOPregunta {
+class DAOPyr {
     constructor(pool) {  
         this.pool=pool;
     }
@@ -130,6 +130,97 @@ class DAOPregunta {
         }
         );
     }
+
+    getAllAnswersByQuestion(idPregunta,callback) { 
+        this.pool.getConnection(function (err, connection) {
+            if (err) {
+                callback(new Error("Error de conexión a la base de datos"));
+            }
+            else {
+                connection.query("SELECT r.cuerpo, r.votos, u.nombre, u.imagen FROM (respuesta r JOIN usuario u ON r.correoUsuario = u.Correo) WHERE  r.idPregunta = ? ORDER BY r.idRespuesta" ,
+                    [idPregunta],
+                    function (err, rows) {
+                        connection.release(); // devolver al pool la conexión
+                        if (err) {
+                            callback(new Error("Error de acceso a la base de datos"));
+                        }
+                        else {
+                            if (rows.length === 0) {
+                                callback(null, false); //no está ninguna pregunta en la BBDD
+                            }
+                            else {
+                                callback(null, rows);
+                            }
+                        }
+                    });
+            }
+        }
+        );
+    }
+    
+   
+   
+    insertAnswer(email, idpregunta, body, callback) {  
+        this.pool.getConnection(function (err, connection) {
+            if (err) {
+                callback(new Error("Error de conexión a la base de datos"));
+            }
+            else {
+                /*Primero insertamos en la tabla task 
+                ID NULL pero a la hora de insertarse en la base de datos, como el campo id es autoincremental, 
+                se le asigna el valor siguiente del anterior id*/
+                connection.query("INSERT INTO `respuesta` (`correoUsuario`, `idPregunta`, `cuerpo`) VALUES ( ?, ?, ?) ",
+                    [email, idpregunta, body],
+                    function (err, rows) {
+                        connection.release(); // devolver al pool la conexión
+                        if (err) {
+                            callback(new Error("Error de inserción: " + err));
+                        }
+                        else {
+                            if (rows.length === 0) {
+                                callback(null, false); //no está el usuario con el correo proporcionado
+                            }
+                            else {
+                                //Una vez que se ha insertado la tarea en la tabla task, la insertamos ahora el tabla 
+                                //tags
+                                callback(null, true); 
+                            }
+                        }
+                    });
+            }
+        }
+        );
+    }
+    
+    /* elimina todas las tareas asociadas al usuario cuyo correo es
+    email y que tengan el valor true en la columna done .*/
+    deleteAnswer(email, callback) {  
+        this.pool.getConnection(function (err, connection) {
+            if (err) {
+                callback(new Error("Error de conexión a la base de datos"));
+            }
+            else {
+                 //Tenemos configurada la opción en CASCADA al eliminar (si se eliminan la tarea de la tabla principal también se elimina de la secundaria los tags asociados a ella)
+                connection.query("DELETE FROM respuesta WHERE done=true AND user = ?",
+                    [email],
+                    function (err, rows) {
+                        connection.release(); // devolver al pool la conexión
+                        if (err) {
+                            callback(new Error("Error de acceso a la base de datos"));
+                        }
+                        else {
+                            if (rows.length === 0) {
+                                callback(null, false); //no está la tarea
+                            }
+                            else {
+                                callback(null, rows);
+                            }
+                        }
+                    });
+            }
+        }
+        );
+    }
 }
 
-module.exports = DAOPregunta;
+module.exports = DAOPyr;
